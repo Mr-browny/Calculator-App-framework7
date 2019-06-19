@@ -1,0 +1,108 @@
+<!DOCTYPE html 5>
+<html>
+<head>
+	<title>Refresher on Html Css and Javascript</title>
+</head>
+<body>
+
+<div>Framework 7</div>
+
+<div id="first"> first Container</div>
+<div id="second"> second Container</div>
+<div class="third">Third Container</div>
+<hr>
+
+<div id="calc">
+	<div id="calcScreen"></div>
+	<div id="calcButton">
+		<!-- First Row Buttons -->
+		<button class="button" value="7">7</button>
+		<button class="button" value="8">8</button>
+		<button class="button" value="9">9</button>
+		<button class="button" value="/">/</button>
+		<!-- Second Row Buttons -->
+		<button class="button" value="4">4</button>
+		<button class="button" value="5">5</button>
+		<button class="button" value="6">6</button>
+		<button class="button" value="*">*</button>
+		<!-- Third Row Buttons -->
+		<button class="button" value="1">1</button>
+		<button class="button" value="2">2</button>
+		<button class="button" value="3">3</button>
+		<button class="button" value="+">+</button>
+		<!-- Fourth Row Buttons -->
+		<button class="button" value="0">0</button>
+		<button class="button" value=".">.</button>
+		<button class="button" value="-">-</button>
+		<button class="button" value="=">=</button>
+
+	</div>
+</div>
+
+<script type="text/javascript">
+	var First =	document.getElementById('first');
+	First.style.color = 'red';
+	First.style.fontSize = '50px';
+	First.style.marginLeft = '50px';
+	First.style.height = '100px';
+
+	
+
+	var Second =	document.getElementById('second');
+	Second.style.color = 'hotpink';
+
+	var Third = document.querySelector('.third');
+
+	var calcBody = document.getElementById('calc');
+	var calcScreen = document.getElementById('calcScreen');
+	var calcButton = document.getElementById('calcButton');
+	
+
+	calcBody.style.width = '300px';
+	calcBody.style.backgroundColor = 'black';
+
+	calcScreen.style.width = '100%';
+	calcScreen.style.height = '100px';
+	calcScreen.style.backgroundColor = 'purple';
+	calcScreen.style.marginTop = '20px';
+	calcScreen.style.fontSize = '25px';
+		calcScreen.style.color = 'white';
+
+
+
+	calcButton.style.width = '100%';
+	calcButton.style.height = '360px';
+	calcButton.style.backgroundColor = 'black';
+	calcButton.style.marginTop = '20px';
+
+	for(i = 0; i<=15; i++){
+		var buttons = document.querySelectorAll('.button')[i];
+		buttons.style.fontSize = '25px';
+		buttons.style.width = '22%';
+		buttons.style.marginLeft = '1.5%';
+		buttons.style.marginBottom = '10px';
+		buttons.style.height = '80px';
+	}
+	for(i = 0; i<=15; i++){
+		var buttons = document.querySelectorAll('.button')[i];
+		buttons.addEventListener('click', function(){
+			var number = this.value;
+			calcScreen.innerHTML = calcScreen.innerHTML + number;
+			var s = calcScreen.innerHTML.slice(0, calcScreen.innerHTML.length-1);
+			if (number == '=') {
+				calcScreen.innerHTML = eval (s);
+			} else {}
+
+		});
+	}
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
